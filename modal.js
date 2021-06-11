@@ -3,10 +3,11 @@ const previews = document.querySelectorAll(".gallery img")
 var modal = document.getElementById("myModal");
 const original = document.querySelector(".modal-content")
 var modalImg = document.getElementById("img01")
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
 
 previews.forEach(preview => {
-    preview.addEventListener('click', () => {
+    preview.addEventListener(touchEvent, () => {
         modal.style.display = "block";
         const originalSrc = preview.getAttribute('data-original');
         console.log(originalSrc)
@@ -14,7 +15,6 @@ previews.forEach(preview => {
     })
 })
 
-let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 modal.addEventListener(touchEvent, (event) => {
     if (event.target == modal) {
         modal.style.display = "none";
