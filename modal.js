@@ -7,7 +7,7 @@ let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
 
 previews.forEach(preview => {
-    preview.addEventListener(touchEvent, () => {
+    preview.addEventListener('click', () => {
         modal.style.display = "block";
         const originalSrc = preview.getAttribute('data-original');
         console.log(originalSrc)
@@ -15,7 +15,7 @@ previews.forEach(preview => {
     })
 })
 
-modal.addEventListener(touchEvent, (event) => {
+modal.addEventListener('click', (event) => {
     if (event.target == modal) {
         modal.style.display = "none";
       }
