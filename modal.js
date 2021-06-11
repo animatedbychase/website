@@ -15,7 +15,7 @@ previews.forEach(preview => {
 })
 
 let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
-modal.addEventListener('touchstart', (event) => {
+modal.addEventListener(touchEvent, (event) => {
     if (event.target == modal) {
         modal.style.display = "none";
       }
