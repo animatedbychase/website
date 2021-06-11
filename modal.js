@@ -14,9 +14,16 @@ previews.forEach(preview => {
     })
 })
 
-
-window.onclick = function(event)  {
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+modal.addEventListener(touchEvent, (event) => {
     if (event.target == modal) {
         modal.style.display = "none";
       }
-}
+})
+//window.onclick = function(event)  {
+//    if (event.target == modal) {
+//        modal.style.display = "none";
+//      }
+//}
+
+
